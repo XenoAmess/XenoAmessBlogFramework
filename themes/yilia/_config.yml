@@ -67,10 +67,10 @@ baidu_analytics: ''
 google_analytics: ''
 favicon: /favicon.png
 
-#你的头像url
+# 你的头像url
 avatar: /XenoAmessAvatar.svg
 
-#是否开启分享
+#是 否开启分享
 share_jia: true
 
 #评论：1、多说；2、网易云跟帖；3、畅言；4、Disqus；5、Gitment
@@ -100,7 +100,13 @@ gitment_oauth:
 # 样式定制 - 一般不需要修改，除非有很强的定制欲望…
 style:
   # 头像上面的背景颜色
+  # header: '#D3D1DC'
   header: '#4d4d4d'
+  gif:
+    # 是否启用左侧边栏动态图效果
+    enable: false
+    # 自定义背景图路径(默认可以不设置，提供默认背景图)
+    # path: /img/biubiubiu.gif
   # 右滑板块背景
   slider: 'linear-gradient(200deg,#a0cfe4,#e8c37e)'
 
@@ -127,4 +133,4 @@ friends:
   #友情链接5: http://localhost:4000/
   #友情链接6: http://localhost:4000/
 
-aboutme: 自称XenoAmess的存在。<br/>目前作为方术师现界。<br/>努力撑过了每一天。
+aboutme: 代号为XenoAmess的、自称【方术师】的奇妙存在。<br/>很强并且很弱但是很强却还是很弱。<br/>努力撑过了每一天。
