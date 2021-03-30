@@ -122,3 +122,10 @@ jsonContent:
     excerpt: false
     categories: false
     tags: true
+
+browsersync:
+  ui: false
+  ghostMode: false
+  logLevel: "warn"
+  notify: false
+  scrollProportionally: false
