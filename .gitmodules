@@ -1,6 +1,6 @@
 [submodule "source"]
-	path = source
-	url = https://github.com/XenoAmess/XenoAmessBlog.git
+    path = source
+    url = https://github.com/XenoAmess/XenoAmessBlog.git
 [submodule "themes/yilia-plus"]
-	path = themes/yilia-plus
-	url = https://github.com/XenoAmess/hexo-theme-yilia-plus
+    path = themes/yilia-plus
+    url = https://github.com/XenoAmess/hexo-theme-yilia-plus
