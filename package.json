@@ -1,6 +1,6 @@
 {
-  "name": "hexo-site",
-  "version": "0.0.0",
+  "name": "xenoamess-blog-framework",
+  "version": "0.0.1",
   "private": true,
   "scripts": {
     "build": "hexo generate",
@@ -12,7 +12,7 @@
     "version": "5.4.0"
   },
   "dependencies": {
-    "hexo": "^5.0.0",
+    "hexo": "^5.4.0",
     "hexo-browsersync": "^0.3.0",
     "hexo-filter-plantuml": "^2.1.0",
     "hexo-generator-archive": "^1.0.0",
