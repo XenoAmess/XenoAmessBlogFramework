@@ -24,8 +24,8 @@ jobs:
         run: npm install
       - name: Get Submodules
         run: |
-        git pull origin master
-        git submodule foreach git pull origin master
+          git pull origin master
+          git submodule foreach git pull origin master
       - name: Hexo Generate
         run: hexo generate
         env:
