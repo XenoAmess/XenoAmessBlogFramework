@@ -25,7 +25,7 @@
     "hexo-renderer-stylus": "^2.1.0",
     "hexo-server": "^3.0.0",
     "hexo-theme-landscape": "^0.0.3",
-    "xmlhttprequest-ssl": "^2.0.0",
+    "xmlhttprequest-ssl": "^2.1.0",
     "keyword-extractor": "~0.0.23"
   }
 }
