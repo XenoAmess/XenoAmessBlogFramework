@@ -1,17 +1,15 @@
-FROM node:latest
-RUN apt-get update
-RUN apt-get upgrade -y
-RUN apt-get install -y git nodejs
-RUN npm install hexo -g
+FROM node:22.8.0
+RUN apt-get update; \
+    apt-get upgrade -y; \
+    apt-get install -y tar git cron vim; \
+    npm install hexo -g;
+ADD cronfile /etc/cron.d/submit-cron
+RUN chmod 0644 /etc/cron.d/submit-cron
+RUN touch /var/log/cron.log
 WORKDIR /
 RUN git clone https://github.com/XenoAmess/XenoAmessBlogFramework.git
 WORKDIR /XenoAmessBlogFramework/
-RUN chmod +777 ./init.sh;./init.sh;chmod +777 ./update.bat;./update.bat
-RUN npm install
-RUN hexo clean; hexo generate
-ADD cronfile /etc/cron.d/submit-cron
-RUN apt-get install -y cron
-RUN chmod 0644 /etc/cron.d/submit-cron
-RUN touch /var/log/cron.log
-RUN service cron restart
+RUN chmod +777 ./init.sh;./init.sh;chmod +777 ./update.bat;./update.bat; \
+    npm install; \
+    hexo clean; hexo generate
 ENTRYPOINT hexo server -p 8080

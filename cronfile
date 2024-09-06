@@ -1,1 +1,1 @@
-*/5 * * * * root /XenoAmessBlogFramework/update.bat
+*/5 * * * * root cd /XenoAmessBlogFramework && /XenoAmessBlogFramework/update.bat >> /var/log/update.bat.log
