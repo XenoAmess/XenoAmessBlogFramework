@@ -1,0 +1,46 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-xablog
+  namespace: backend
+  annotations:
+    cert-manager.io/issuer: letsencrypt-nginx
+spec:
+  tls:
+    - hosts:
+        - www.xenoamess.com
+        - xenoamess.com
+        - blog.xenoamess.com
+      secretName: letsencrypt-nginx-echo
+  rules:
+    - host: www.xenoamess.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: xablog
+                port:
+                  number: 80
+    - host: xenoamess.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: xablog
+                port:
+                  number: 80
+    - host: blog.xenoamess.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: xablog
+                port:
+                  number: 80
+  ingressClassName: nginx

@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: proxy-github-com
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: proxy-github-com
+  template:
+    metadata:
+      labels:
+        app: proxy-github-com
+    spec:
+      containers:
+        - name: nginx
+          image: nginx:latest
+          ports:
+            - containerPort: 443
+          volumeMounts:
+            - name: nginx-ssl
+              mountPath: /etc/nginx/ssl
+            - name: nginx-conf
+              mountPath: /etc/nginx/conf.d
+      volumes:
+        - name: nginx-ssl
+          secret:
+            secretName: xenoamess.com
+        - name: nginx-conf
+          configMap:
+            name: proxy-github-com
