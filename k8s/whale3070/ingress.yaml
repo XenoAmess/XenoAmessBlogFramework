@@ -1,0 +1,46 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-whale3070blog
+  namespace: backend
+  annotations:
+    cert-manager.io/issuer: letsencrypt-nginx
+spec:
+  tls:
+    - hosts:
+        - www.whale3070.com
+        - whale3070.com
+        - blog.whale3070.com
+      secretName: whale3070.com
+  rules:
+    - host: www.whale3070.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: whale3070blog
+                port:
+                  number: 80
+    - host: whale3070.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: whale3070blog
+                port:
+                  number: 80
+    - host: blog.whale3070.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: whale3070blog
+                port:
+                  number: 80
+  ingressClassName: nginx
