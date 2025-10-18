@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: gitblit
+  namespace: backend
+spec:
+  capacity:
+    storage: 20Gi
+  csi:
+    driver: dobs.csi.digitalocean.com
+    volumeHandle: b4cc0609-aaf6-11ef-bbc7-0a58ac14a8d4
+    fsType: ext4
+    volumeAttributes:
+      storage.kubernetes.io/csiProvisionerIdentity: 1726176263376-2170-dobs.csi.digitalocean.com
+  accessModes:
+    - ReadWriteOnce
+  claimRef:
+    kind: PersistentVolumeClaim
+    namespace: backend
+    name: gitblit
+  persistentVolumeReclaimPolicy: Delete
+  storageClassName: do-block-storage
+  volumeMode: Filesystem

@@ -4,3 +4,6 @@
 [submodule "themes/yilia-plus"]
     path = themes/yilia-plus
     url = https://github.com/XenoAmess/hexo-theme-yilia-plus
+[submodule "k8s/whale3070/whale3070.github.io"]
+    path = k8s/whale3070/whale3070.github.io
+    url = https://github.com/whale3070/whale3070.github.io.git
