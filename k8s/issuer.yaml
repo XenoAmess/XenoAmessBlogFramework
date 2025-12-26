@@ -6,7 +6,7 @@ apiVersion: cert-manager.io/v1
 kind: Issuer
 metadata:
   name: letsencrypt-nginx
-  namespace: kubernetes-dashboard
+  namespace: backend
 spec:
   acme:
     email: xenoamess@gmail.com
@@ -16,5 +16,5 @@ spec:
     solvers:
     - http01:
         ingress:
-          class: nginx
+          class: traefik
 

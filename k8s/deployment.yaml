@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: xablog
-          image: registry.digitalocean.com/xenoamess/xablog:latest
+          image: 23.94.174.102:8911/xenoamess/xablog:latest
           ports:
             - name: http
               containerPort: 8080

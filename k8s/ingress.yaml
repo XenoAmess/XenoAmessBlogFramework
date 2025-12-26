@@ -11,7 +11,7 @@ spec:
         - www.xenoamess.com
         - xenoamess.com
         - blog.xenoamess.com
-      secretName: letsencrypt-nginx-echo
+      secretName: letsencrypt-xenoamess
   rules:
     - host: www.xenoamess.com
       http:
@@ -43,4 +43,13 @@ spec:
                 name: xablog
                 port:
                   number: 80
-  ingressClassName: nginx
+    - http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: xablog
+                port:
+                  number: 80
+  ingressClassName: traefik

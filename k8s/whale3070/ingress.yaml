@@ -43,4 +43,4 @@ spec:
                 name: whale3070blog
                 port:
                   number: 80
-  ingressClassName: nginx
+  ingressClassName: traefik
