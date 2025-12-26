@@ -12,7 +12,7 @@ COPY update.sh /update.sh
 COPY favicon.png /var/www/html/null
 ARG CACHEBUST
 RUN echo "$CACHEBUST"
-RUN chmod +777 /update.sh;cd /var/www/html;/update.sh
+RUN chmod +777 /update.sh
 #RUN cd /var/www/html ; git fetch ; git reset --hard origin/master ; git pull origin master ; 0
 EXPOSE 80
 ENTRYPOINT service cron restart;service nginx restart;sleep infinity
