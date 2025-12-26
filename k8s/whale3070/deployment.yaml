@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: whale3070blog
-          image: registry.digitalocean.com/xenoamess/whale3070blog:latest
+          image: 23.94.174.102:8911/xenoamess/whale3070blog:latest
           ports:
             - name: http
               containerPort: 80
