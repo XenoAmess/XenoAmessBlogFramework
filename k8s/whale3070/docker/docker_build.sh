@@ -1,5 +1,5 @@
 export tag=$(date "+%Y%m%d_%H%M%S")
-docker build -t registry.digitalocean.com/xenoamess/whale3070blog:${tag} -f Dockerfile ../ --build-arg CACHEBUST=${tag}
-docker tag registry.digitalocean.com/xenoamess/whale3070blog:${tag} registry.digitalocean.com/xenoamess/whale3070blog:latest
-docker push registry.digitalocean.com/xenoamess/whale3070blog:${tag}
-docker push registry.digitalocean.com/xenoamess/whale3070blog:latest
+docker build -t 23.94.174.102:8911/xenoamess/whale3070blog:${tag} -f Dockerfile ../ --build-arg CACHEBUST=${tag}
+docker tag 23.94.174.102:8911/xenoamess/whale3070blog:${tag} 23.94.174.102:8911/xenoamess/whale3070blog:latest
+docker push 23.94.174.102:8911/xenoamess/whale3070blog:${tag}
+docker push 23.94.174.102:8911/xenoamess/whale3070blog:latest
