@@ -1,0 +1,1 @@
+./funeral-0.1.2-runner -Dquarkus.config.locations=file:/home/xenoamess/funeral/application.yml
