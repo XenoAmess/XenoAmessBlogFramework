@@ -6,7 +6,8 @@ ADD docker/cronfile /etc/cron.d/submit-cron
 RUN chmod 0644 /etc/cron.d/submit-cron
 RUN touch /var/log/cron.log
 WORKDIR /
-COPY whale3070.github.io /var/www/html
+RUN git clone https://github.com/whale3070/whale3070.github.io.git
+RUN mv whale3070.github.io /var/www/html
 COPY update.sh /update.sh
 COPY favicon.png /var/www/html/null
 ARG CACHEBUST
