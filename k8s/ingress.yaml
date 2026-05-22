@@ -11,6 +11,7 @@ spec:
         - www.xenoamess.com
         - xenoamess.com
         - blog.xenoamess.com
+        - funeral.xenoamess.com
       secretName: letsencrypt-xenoamess
   rules:
     - host: www.xenoamess.com
@@ -41,6 +42,16 @@ spec:
             backend:
               service:
                 name: xablog
+                port:
+                  number: 80
+    - host: funeral.xenoamess.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: funeral
                 port:
                   number: 80
     - http:
