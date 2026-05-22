@@ -1,4 +1,4 @@
-FROM node:25
+FROM node:26
 RUN apt-get update; \
     apt-get upgrade -y; \
     apt-get install -y tar git cron vim; \
