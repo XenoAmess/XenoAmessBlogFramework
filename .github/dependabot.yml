@@ -26,17 +26,10 @@ updates:
     open-pull-requests-limit: 10
     commit-message:
       prefix: "build(deps)"
-      include: "scope"
+      prefix-development: "build(deps-dev)"
     labels:
       - "dependencies"
       - "npm"
-    groups:
-      npm-minor-and-patch:
-        applies-to: version-updates
-        update-types: ["minor", "patch"]
-      npm-major:
-        applies-to: version-updates
-        update-types: ["major"]
 
   - package-ecosystem: "github-actions"
     directory: "/"
@@ -48,12 +41,7 @@ updates:
     target-branch: "master"
     open-pull-requests-limit: 5
     commit-message:
-      prefix: "build(deps)"
-      include: "scope"
+      prefix: "ci"
     labels:
       - "dependencies"
       - "github-actions"
-    groups:
-      github-actions:
-        applies-to: version-updates
-        update-types: ["minor", "patch", "major"]
