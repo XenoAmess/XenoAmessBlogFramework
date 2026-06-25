@@ -18,12 +18,42 @@ updates:
   - package-ecosystem: "npm"
     directory: "/"
     schedule:
-      interval: "daily"
+      interval: "weekly"
+      day: "monday"
+      time: "04:00"
+      timezone: "Asia/Shanghai"
     target-branch: "master"
-    open-pull-requests-limit: 100
+    open-pull-requests-limit: 10
+    commit-message:
+      prefix: "build(deps)"
+      include: "scope"
+    labels:
+      - "dependencies"
+      - "npm"
+    groups:
+      npm-minor-and-patch:
+        applies-to: version-updates
+        update-types: ["minor", "patch"]
+      npm-major:
+        applies-to: version-updates
+        update-types: ["major"]
+
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
-      interval: "daily"
+      interval: "weekly"
+      day: "monday"
+      time: "04:00"
+      timezone: "Asia/Shanghai"
     target-branch: "master"
-    open-pull-requests-limit: 100
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: "build(deps)"
+      include: "scope"
+    labels:
+      - "dependencies"
+      - "github-actions"
+    groups:
+      github-actions:
+        applies-to: version-updates
+        update-types: ["minor", "patch", "major"]
