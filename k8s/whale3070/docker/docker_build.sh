@@ -1,3 +1,4 @@
+docker pull node:26
 export tag=$(date "+%Y%m%d_%H%M%S")
 docker build -t xenoamess/whale3070blog:${tag} -f Dockerfile ../ --build-arg CACHEBUST=${tag}
 docker tag xenoamess/whale3070blog:${tag} xenoamess/whale3070blog:latest

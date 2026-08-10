@@ -1,8 +1,11 @@
 FROM node:26
-RUN apt-get update; \
-    apt-get upgrade -y; \
-    apt-get install -y tar git cron vim; \
-    npm install hexo -g;
+RUN apt-get update && \
+    apt-get upgrade -y && \
+    apt-get install -y --no-install-recommends tar git cron vim nginx && \
+    npm install hexo -g && \
+    npm cache clean --force && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 ADD cronfile /etc/cron.d/submit-cron
 RUN chmod 0644 /etc/cron.d/submit-cron
 RUN touch /var/log/cron.log
