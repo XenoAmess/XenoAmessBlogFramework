@@ -26,6 +26,6 @@
     "hexo-server": "^3.0.0",
     "hexo-theme-landscape": "^1.1.0",
     "xmlhttprequest-ssl": "^4.0.0",
-    "keyword-extractor": "~0.0.28"
+    "keyword-extractor": "~0.3.0"
   }
 }
